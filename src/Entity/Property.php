@@ -120,5 +120,4 @@ class Property
     {
         $this->country = $country;
     }
-
 }

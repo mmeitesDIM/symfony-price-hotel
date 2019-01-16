@@ -3,32 +3,53 @@
 namespace App\Controller;
 
 use App\Entity\Property;
+use App\Form\PropertyType;
+use App\Repository\PropertyRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-class PropertyController extends AbstractController {
+class PropertyController extends AbstractController
+{
 
-    /**
-     * @Route("/properties", name="property")
-     */
-    public function index() {
-
-        $entityManager = $this->getDoctrine()->getManager();
+    public function index(Request $request)
+    {
 
         $property = new Property();
-        $property->setName("Annecy");
-        $property->setCity("Annecy");
-        $property->setAddress("Annecy");
-        $property->setCountry("Annecy");
-        $property->setPostalCode("Annecy");
+        $form = $this->createForm(PropertyType::class, $property);
+        $form->handleRequest($request);
 
-        $entityManager->persist($property);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($property);
+            $entityManager->flush();
 
-        $entityManager->flush();
+
+        }
+
+        return $this->render('property/index.html.twig', [
+                'form' => $form->createView(),
+            ]
+        );
+    }
+
+    public function showDb()
+    {
+        $properties = $this->getDoctrine()
+            ->getRepository(Property::class)
+            ->findAll();
+
+        $finalName = "";
+
+        foreach ($properties as $property) {
+            $name = $property->getName();
+        }
 
         return $this->render(
-            'property/index.html.twig',
-            ['controller_name' => 'PropertyController',]
+            'property/findAll.html.twig',
+            ['base_content' => $properties]
         );
     }
 
