@@ -18,6 +18,11 @@ class Owner {
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $rib;
+
+    /**
      * @ORM\OneToOne(targetEntity="User", inversedBy="owner")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
      */
