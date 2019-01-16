@@ -69,7 +69,7 @@ class Bookmark {
     /**
      * Set property
      * @param Property $property
-     * @return Room
+     * @return Bookmark
      */
     public function setProperty(Property $property): self {
         $this->property = $property;
