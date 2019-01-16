@@ -12,7 +12,7 @@ class Image {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", name="image_id")
      */
     private $id;
 
@@ -20,5 +20,11 @@ class Image {
      * @ORM\Column(type="blob")
      */
     private $blob;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Room", inversedBy="images")
+     * @ORM\JoinColumn(name="room_id", referencedColumnName="room_id")
+     */
+    private $room;
 
 }
