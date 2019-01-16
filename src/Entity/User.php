@@ -18,6 +18,22 @@ class User {
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $mail;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Image")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="image_id")
+     */
+    private $image;
+
+    /**
      * @ORM\OneToOne(targetEntity="Alert", mappedBy="user")
      */
     private $alert;
