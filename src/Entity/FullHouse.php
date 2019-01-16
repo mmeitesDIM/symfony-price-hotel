@@ -9,4 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class FullHouse extends Property {
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $roomNumber;
 }
