@@ -21,4 +21,33 @@ class Image {
      */
     private $blob;
 
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId(): int {
+        return $this->id;
+    }
+
+    /**
+     * get blob
+     *
+     * @return mixed
+     */
+    public function getBlob() {
+        return $this->blob;
+    }
+
+    /**
+     * Set blob
+     *
+     * @param $blob
+     * @return Image
+     */
+    public function setBlob($blob): self {
+        $this->blob = $blob;
+        return $this;
+    }
+
 }
