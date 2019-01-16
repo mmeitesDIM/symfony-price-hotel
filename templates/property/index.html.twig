@@ -1,5 +1,8 @@
 {% extends 'base.html.twig' %}
 
+
+
+
 {% block title %}Hello PropertyController!{% endblock %}
 
 {% block body %}
@@ -9,7 +12,11 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Hello {#{{ controller_name }}#}! ✅</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
 
     This friendly message is coming from:
     <ul>
