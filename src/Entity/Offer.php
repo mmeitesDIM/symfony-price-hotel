@@ -18,6 +18,21 @@ class Offer {
     private $id;
 
     /**
+     * @ORM\Column(type="date")
+     */
+    private $startDate;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $endDate;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $price;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Property", inversedBy="offers")
      * @ORM\JoinColumn(name="property_id", referencedColumnName="property_id")
      */
