@@ -33,4 +33,73 @@ class Alert {
      */
     private $offer;
 
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId(): int {
+        return $this->id;
+    }
+
+    /**
+     * Get user
+     *
+     * @return User
+     */
+    public function getUser(): User {
+        return $this->user;
+    }
+
+    /**
+     * Set user
+     *
+     * @param User $user
+     * @return Alert
+     */
+    public function setUser(User $user): self {
+        $this->user = $user;
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return int
+     */
+    public function getPrice(): int {
+        return $this->price;
+    }
+
+    /**
+     * Set price
+     *
+     * @param int $price
+     * @return Alert
+     */
+    public function setPrice(int $price): self {
+        $this->price = $price;
+        return $this;
+    }
+
+    /**
+     * Get offer
+     *
+     * @return Offer
+     */
+    public function getOffer(): Offer {
+        return $this->offer;
+    }
+
+    /**
+     * Set offer
+     *
+     * @param Offer $offer
+     * @return Alert
+     */
+    public function setOffer(Offer $offer): self {
+        $this->offer = $offer;
+        return $this;
+    }
+
 }
