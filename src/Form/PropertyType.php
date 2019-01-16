@@ -16,7 +16,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-class Property1Type extends AbstractType
+class PropertyType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -26,7 +26,6 @@ class Property1Type extends AbstractType
             ->add('city', TextType::class)
             ->add('country', TextType::class)
             ->add('name', TextType::class)
-            ->add('save', SubmitType::class)
         ;
     }
 
