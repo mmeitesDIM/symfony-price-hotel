@@ -17,6 +17,16 @@ class Opinion {
     private $id;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $message;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $rated;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Booking", inversedBy="opinions")
      * @ORM\JoinColumn(name="booking_id", referencedColumnName="booking_id")
      */
