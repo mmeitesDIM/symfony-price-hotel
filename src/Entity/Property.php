@@ -54,13 +54,23 @@ abstract class Property {
     protected $bedNumber;
 
     /**
+     * @ORM\Column(type="float")
+     */
+    protected $avgRated;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Owner", inversedBy="properties")
      * @ORM\JoinColumn(name="owner_id", referencedColumnName="owner_id")
      */
     protected $owner;
 
     /**
-     * @ORM\OneToMany(targetEntity="Offer", mappedBy="offer")
+     * @ORM\OneToOne(targetEntity="Image", mappedBy="property")
+     */
+    protected $image;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Offer", mappedBy="property")
      */
     protected $offers;
 
@@ -69,9 +79,21 @@ abstract class Property {
      */
     protected $bookmarks;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Room", mappedBy="property")
+     */
+    protected $rooms;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Equipement", mappedBy="property")
+     */
+    protected $equipements;
+
     public function __construct() {
         $this->offers = new ArrayCollection();
         $this->bookmarks = new ArrayCollection();
+        $this->rooms = new ArrayCollection();
+        $this->equipements = new ArrayCollection();
     }
 
 }

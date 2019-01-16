@@ -23,6 +23,12 @@ class Room {
     private $room_type;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Property", inversedBy="rooms")
+     * @ORM\JoinColumn(name="property_id", referencedColumnName="property_id")
+     */
+    private $property;
+
+    /**
      * @ORM\OneToMany(targetEntity="Image", mappedBy="room")
      */
     private $images;

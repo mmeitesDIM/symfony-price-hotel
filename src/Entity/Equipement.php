@@ -12,7 +12,7 @@ class Equipement {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", name="equipement_id")
      */
     private $id;
 
@@ -32,8 +32,14 @@ class Equipement {
     private $equipementType;
 
     /**
-     * @ORM\Column(type="string", length=255")
+     * @ORM\Column(type="string", length=255)
      */
     private $imagePath;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Property", inversedBy="equipements")
+     * @ORM\JoinColumn(name="property_id", referencedColumnName="property_id")
+     */
+    private $property;
 
 }

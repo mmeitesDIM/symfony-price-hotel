@@ -22,6 +22,12 @@ class Image {
     private $blob;
 
     /**
+     * @ORM\OneToOne(targetEntity="Property", inversedBy="image")
+     * @ORM\JoinColumn(name="property_id", referencedColumnName="property_id")
+     */
+    private $property;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Room", inversedBy="images")
      * @ORM\JoinColumn(name="room_id", referencedColumnName="room_id")
      */
