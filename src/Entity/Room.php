@@ -29,7 +29,11 @@ class Room {
     private $property;
 
     /**
-     * @ORM\OneToMany(targetEntity="Image", mappedBy="room")
+     * @ORM\ManyToMany(targetEntity="Image")
+     * @ORM\JoinTable(name="room_images",
+     *      joinColumns={@ORM\JoinColumn(name="room_id", referencedColumnName="room_id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="image_id", unique=true)}
+     *     )
      */
     private $images;
 

@@ -65,7 +65,8 @@ abstract class Property {
     protected $owner;
 
     /**
-     * @ORM\OneToOne(targetEntity="Image", mappedBy="property")
+     * @ORM\OneToOne(targetEntity="Image")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="image_id")
      */
     protected $image;
 
