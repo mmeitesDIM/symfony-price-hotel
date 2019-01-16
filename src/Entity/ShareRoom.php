@@ -9,4 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ShareRoom extends Property {
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $placeLeaving;
+
 }
