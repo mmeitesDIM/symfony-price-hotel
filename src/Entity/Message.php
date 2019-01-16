@@ -33,4 +33,73 @@ class Message {
      */
     private $owner;
 
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId(): int {
+        return $this->id;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string
+     */
+    public function getContent(): string {
+        return $this->content;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     * @return Message
+     */
+    public function setContent(string $content): self {
+        $this->content = $content;
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return User
+     */
+    public function getUser(): User {
+        return $this->user;
+    }
+
+    /**
+     * Set user
+     *
+     * @param User $user
+     * @return Message
+     */
+    public function setUser(User $user): self {
+        $this->user = $user;
+        return $this;
+    }
+
+    /**
+     * Get owner
+     *
+     * @return Owner
+     */
+    public function getOwner(): Owner {
+        return $this->owner;
+    }
+
+    /**
+     * Set owner
+     *
+     * @param Owner $owner
+     * @return Message
+     */
+    public function setOwner(Owner $owner): self {
+        $this->owner = $owner;
+        return $this;
+    }
+
 }
