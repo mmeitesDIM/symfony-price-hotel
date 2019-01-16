@@ -12,10 +12,9 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method Property[]    findAll()
  * @method Property[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PropertyRepository extends ServiceEntityRepository
-{
-    public function __construct(RegistryInterface $registry)
-    {
+class PropertyRepository extends ServiceEntityRepository {
+
+    public function __construct(RegistryInterface $registry) {
         parent::__construct($registry, Property::class);
     }
 
