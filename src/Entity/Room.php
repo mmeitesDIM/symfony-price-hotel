@@ -41,4 +41,83 @@ class Room {
         $this->images = new ArrayCollection();
     }
 
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId(): int {
+        return $this->id;
+    }
+
+    /**
+     * Get roomType
+     *
+     * @return string
+     */
+    public function getRoomType(): string {
+        return $this->room_type;
+    }
+
+    /**
+     * Set roomType
+     *
+     * @param string $room_type
+     * @return Room
+     */
+    public function setRoomType(string $room_type): self {
+        $this->room_type = $room_type;
+        return $this;
+    }
+
+    /**
+     * Get property
+     *
+     * @return Property
+     */
+    public function getProperty(): Property {
+        return $this->property;
+    }
+
+    /**
+     * Set property
+     * @param Property $property
+     * @return Room
+     */
+    public function setProperty(Property $property): self {
+        $this->property = $property;
+        return $this;
+    }
+
+    /**
+     * Get images
+     *
+     * @return ArrayCollection
+     */
+    public function getImages(): ArrayCollection {
+        return $this->images;
+    }
+
+    /**
+     * Set images
+     *
+     * @param ArrayCollection $images
+     * @return Room
+     */
+    public function setImages(ArrayCollection $images): self {
+        $this->images = $images;
+        return $this;
+    }
+
+    /**
+     * Add image to images
+     *
+     * @param Image $image
+     * @return Room
+     */
+    public function addImage(Image $image): self {
+        $this->images->add($image);
+        return $this;
+    }
+
 }
