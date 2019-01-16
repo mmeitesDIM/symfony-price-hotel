@@ -17,6 +17,11 @@ class Alert {
     private $id;
 
     /**
+     * @ORM\Column(type="float")
+     */
+    private $price;
+
+    /**
      * @ORM\OneToOne(targetEntity="User", inversedBy="alert")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
      */
