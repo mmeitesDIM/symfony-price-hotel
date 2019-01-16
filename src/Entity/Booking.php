@@ -18,6 +18,26 @@ class Booking {
     private $id;
 
     /**
+     * @ORM\Column(type="date")
+     */
+    private $startDate;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $endDate;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $totalPrice;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $payed;
+
+    /**
      * @ORM\OneToMany(targetEntity="Opinion", mappedBy="booking")
      */
     private $opinions;
