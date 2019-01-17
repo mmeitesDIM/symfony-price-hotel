@@ -1,30 +1,24 @@
 <?php
-
 namespace App\Form;
-
 use App\Entity\Property;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
 class PropertyType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('address')
-            ->add('postalCode')
-            ->add('city')
-            ->add('country')
-            ->add('surface')
-            ->add('bedNumber')
-            ->add('avgRated')
-            ->add('owner')
-            ->add('image')
+            ->add('name', ChoiceType::class, [
+                "choices" => [
+                    "Full House" => "FullHouse",
+                    "Shared Room" => "SharedRoom",
+                    "Private Room" => "PrivateRoom",
+                ],
+            ])
         ;
     }
-
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([

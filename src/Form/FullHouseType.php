@@ -21,8 +21,6 @@ class FullHouseType extends AbstractType
             ->add('bedNumber')
             ->add('avgRated')
             ->add('roomNumber')
-            ->add('owner')
-            ->add('image')
         ;
     }
 

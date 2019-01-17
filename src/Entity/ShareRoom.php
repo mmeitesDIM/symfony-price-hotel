@@ -21,7 +21,7 @@ class ShareRoom extends Property {
      *
      * @return int
      */
-    public function getPlaceLeaving(): int {
+    public function getPlaceLeaving(): ?int {
         return $this->placeLeaving;
     }
 

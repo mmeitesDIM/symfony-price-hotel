@@ -21,8 +21,6 @@ class ShareRoomType extends AbstractType
             ->add('bedNumber')
             ->add('avgRated')
             ->add('placeLeaving')
-            ->add('owner')
-            ->add('image')
         ;
     }
 

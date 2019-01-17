@@ -20,8 +20,6 @@ class PrivateRoomType extends AbstractType
             ->add('surface')
             ->add('bedNumber')
             ->add('avgRated')
-            ->add('owner')
-            ->add('image')
         ;
     }
 

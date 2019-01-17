@@ -34,12 +34,24 @@ class PropertyController extends AbstractController
         $form = $this->createForm(PropertyType::class, $property);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($property);
-            $entityManager->flush();
 
-            return $this->redirectToRoute('property_index');
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+            var_dump($property->getName());
+
+            switch ($property->getName()) {
+
+                case "FullHouse":
+                    return $this->redirectToRoute('full_house_new');
+                    break;
+                case "SharedRoom":
+                    return $this->redirectToRoute('share_room_new');
+                    break;
+                case "PrivateRoom":
+                    return $this->redirectToRoute('private_room_new');
+                    break;
+            }
         }
 
         return $this->render('property/new.html.twig', [
@@ -85,7 +97,7 @@ class PropertyController extends AbstractController
      */
     public function delete(Request $request, Property $property): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$property->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $property->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($property);
             $entityManager->flush();
