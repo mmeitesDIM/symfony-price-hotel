@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/full/house")
+ * @Route("/fullhouse")
  */
 class FullHouseController extends AbstractController
 {
