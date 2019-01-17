@@ -10,6 +10,47 @@
 
 <div class="example-wrapper">
     <h1>PriceHotel {{ controller_name }}! </h1>
-    <a href=""
+
+    {#<div class="card-deck col-sm-4">#}
+        {#{% for full_house in full_houses %}#}
+
+            {#<div class="card">#}
+                {#<img class="card-img-top" src="{{ asset('papetries.jpg') }}">#}
+                {#<div class="card-body">#}
+                    {#<h5 class="card-title">{{ full_house.name }}</h5>#}
+                    {#<p class="card-text"></p>#}
+                {#</div>#}
+            {#</div>#}
+        {#{% else %}#}
+        {#{% endfor %}#}
+    {#</div>#}
+
+    {#<div class="card-deck col-sm-4">#}
+        {#{% for share_room in share_rooms %}#}
+
+            {#<div class="card">#}
+                {#<img class="card-img-top" src="{{ asset('papetries.jpg') }}">#}
+                {#<div class="card-body">#}
+                    {#<h5 class="card-title">{{ share_room.name }}</h5>#}
+                    {#<p class="card-text"></p>#}
+                {#</div>#}
+            {#</div>#}
+        {#{% else %}#}
+        {#{% endfor %}#}
+    {#</div>#}
+
+    {#<div class="card-deck col-sm-4">#}
+        {#{% for private_room in private_rooms %}#}
+
+            {#<div class="card">#}
+                {#<img class="card-img-top" src="{{ asset('papetries.jpg') }}">#}
+                {#<div class="card-body">#}
+                    {#<h5 class="card-title">{{ private_rooms.name }}</h5>#}
+                    {#<p class="card-text"></p>#}
+                {#</div>#}
+            {#</div>#}
+        {#{% else %}#}
+        {#{% endfor %}#}
+    {#</div>#}
 </div>
 {% endblock %}
