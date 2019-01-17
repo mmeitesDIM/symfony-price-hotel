@@ -5,20 +5,34 @@
 {% block body %}
     <h1>Property index</h1>
 
+    <div class="card-deck col-sm-4">
+        {% for property in properties %}
+
+            <div class="card">
+                <img class="card-img-top" src="{{ asset('papetries.jpg') }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ property.name }}</h5>
+                    <p class="card-text"></p>
+                </div>
+            </div>
+        {% else %}
+        {% endfor %}
+    </div>
+
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>PostalCode</th>
-                <th>City</th>
-                <th>Country</th>
-                <th>Surface</th>
-                <th>BedNumber</th>
-                <th>AvgRated</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>PostalCode</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Surface</th>
+            <th>BedNumber</th>
+            <th>AvgRated</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for property in properties %}
