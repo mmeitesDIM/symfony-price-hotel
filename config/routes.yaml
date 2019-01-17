@@ -1,8 +1,3 @@
 index:
     path: /
-    controller: App\Controller\PropertyController::index
-
-Properties:
-    path: /properties
-    controller: App\Controller\PropertyController::showDb
-
+    controller: App\Controller\HomePageController::index
