@@ -5,3 +5,6 @@ index:
 fullHouse:
     path: /house/new
     controller : App\Controller\FullHouseController::new
+
+app_logout:
+    path: /logout
