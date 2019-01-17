@@ -4,10 +4,12 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
 class User implements UserInterface {
 
@@ -24,7 +26,7 @@ class User implements UserInterface {
     private $email;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="array")
      */
     private $roles = [];
 
@@ -35,13 +37,13 @@ class User implements UserInterface {
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
      * @ORM\OneToOne(targetEntity="Image")
-     * @ORM\JoinColumn(name="image_id", referencedColumnName="image_id")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="image_id", nullable=true)
      */
     private $image;
 
