@@ -2,12 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Property;
+use App\Entity\ShareRoom;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PropertyType extends AbstractType
+class ShareRoomType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -20,6 +20,7 @@ class PropertyType extends AbstractType
             ->add('surface')
             ->add('bedNumber')
             ->add('avgRated')
+            ->add('placeLeaving')
             ->add('owner')
             ->add('image')
         ;
@@ -28,7 +29,7 @@ class PropertyType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Property::class,
+            'data_class' => ShareRoom::class,
         ]);
     }
 }

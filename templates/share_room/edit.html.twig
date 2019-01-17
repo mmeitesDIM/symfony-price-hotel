@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ShareRoom{% endblock %}
+
+{% block body %}
+    <h1>Edit ShareRoom</h1>
+
+    {{ include('share_room/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('share_room_index') }}">back to list</a>
+
+    {{ include('share_room/_delete_form.html.twig') }}
+{% endblock %}

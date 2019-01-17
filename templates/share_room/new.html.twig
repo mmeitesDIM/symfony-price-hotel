@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ShareRoom{% endblock %}
+
+{% block body %}
+    <h1>Create new ShareRoom</h1>
+
+    {{ include('share_room/_form.html.twig') }}
+
+    <a href="{{ path('share_room_index') }}">back to list</a>
+{% endblock %}

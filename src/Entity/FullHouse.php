@@ -21,7 +21,7 @@ class FullHouse extends Property {
      *
      * @return int
      */
-    public function getRoomNumber(): int {
+    public function getRoomNumber(): ?int {
         return $this->roomNumber;
     }
 

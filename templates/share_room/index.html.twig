@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ShareRoom index{% endblock %}
+
+{% block body %}
+    <h1>ShareRoom index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>PostalCode</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Surface</th>
+                <th>BedNumber</th>
+                <th>AvgRated</th>
+                <th>PlaceLeaving</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for share_room in share_rooms %}
+            <tr>
+                <td>{{ share_room.id }}</td>
+                <td>{{ share_room.name }}</td>
+                <td>{{ share_room.address }}</td>
+                <td>{{ share_room.postalCode }}</td>
+                <td>{{ share_room.city }}</td>
+                <td>{{ share_room.country }}</td>
+                <td>{{ share_room.surface }}</td>
+                <td>{{ share_room.bedNumber }}</td>
+                <td>{{ share_room.avgRated }}</td>
+                <td>{{ share_room.placeLeaving }}</td>
+                <td>
+                    <a href="{{ path('share_room_show', {'id': share_room.id}) }}">show</a>
+                    <a href="{{ path('share_room_edit', {'id': share_room.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('share_room_new') }}">Create new</a>
+{% endblock %}

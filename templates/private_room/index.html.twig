@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PrivateRoom index{% endblock %}
+
+{% block body %}
+    <h1>PrivateRoom index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>PostalCode</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Surface</th>
+                <th>BedNumber</th>
+                <th>AvgRated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for private_room in private_rooms %}
+            <tr>
+                <td>{{ private_room.id }}</td>
+                <td>{{ private_room.name }}</td>
+                <td>{{ private_room.address }}</td>
+                <td>{{ private_room.postalCode }}</td>
+                <td>{{ private_room.city }}</td>
+                <td>{{ private_room.country }}</td>
+                <td>{{ private_room.surface }}</td>
+                <td>{{ private_room.bedNumber }}</td>
+                <td>{{ private_room.avgRated }}</td>
+                <td>
+                    <a href="{{ path('private_room_show', {'id': private_room.id}) }}">show</a>
+                    <a href="{{ path('private_room_edit', {'id': private_room.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('private_room_new') }}">Create new</a>
+{% endblock %}

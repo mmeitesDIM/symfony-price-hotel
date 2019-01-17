@@ -2,12 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Property;
+use App\Entity\PrivateRoom;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PropertyType extends AbstractType
+class PrivateRoomType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -28,7 +28,7 @@ class PropertyType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Property::class,
+            'data_class' => PrivateRoom::class,
         ]);
     }
 }

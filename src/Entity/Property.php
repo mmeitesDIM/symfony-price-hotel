@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="property_type", type="string")
  */
-abstract class Property {
+class Property {
 
     /**
      * @ORM\Id()
@@ -114,7 +114,7 @@ abstract class Property {
      *
      * @return int
      */
-    public function getId(): int {
+    public function getId(): ?int {
         return $this->id;
     }
 
@@ -123,7 +123,7 @@ abstract class Property {
      *
      * @return string
      */
-    public function getName(): string {
+    public function getName(): ?string {
         return $this->name;
     }
 
@@ -143,7 +143,7 @@ abstract class Property {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->address;
     }
 
@@ -163,7 +163,7 @@ abstract class Property {
      *
      * @return string
      */
-    public function getPostalCode(): string {
+    public function getPostalCode(): ?string {
         return $this->postalCode;
     }
 
@@ -183,7 +183,7 @@ abstract class Property {
      *
      * @return string
      */
-    public function getCity(): string {
+    public function getCity(): ?string {
         return $this->city;
     }
 
@@ -203,7 +203,7 @@ abstract class Property {
      *
      * @return string
      */
-    public function getCountry(): string {
+    public function getCountry(): ?string {
         return $this->country;
     }
 
@@ -223,7 +223,7 @@ abstract class Property {
      *
      * @return Owner
      */
-    public function getOwner(): Owner {
+    public function getOwner(): ?Owner {
         return $this->owner;
     }
 
@@ -243,7 +243,7 @@ abstract class Property {
      *
      * @return ArrayCollection
      */
-    public function getOffers(): ArrayCollection {
+    public function getOffers(): ?ArrayCollection {
         return $this->offers;
     }
 
@@ -274,7 +274,7 @@ abstract class Property {
      *
      * @return ArrayCollection
      */
-    public function getBookmarks(): ArrayCollection {
+    public function getBookmarks(): ?ArrayCollection {
         return $this->bookmarks;
     }
 
@@ -305,7 +305,7 @@ abstract class Property {
      *
      * @return int
      */
-    public function getSurface(): int {
+    public function getSurface(): ?int {
         return $this->surface;
     }
 
@@ -325,7 +325,7 @@ abstract class Property {
      *
      * @return int
      */
-    public function getBedNumber(): int {
+    public function getBedNumber(): ?int {
         return $this->bedNumber;
     }
 
@@ -345,7 +345,7 @@ abstract class Property {
      *
      * @return float
      */
-    public function getAvgRated(): float {
+    public function getAvgRated(): ?float {
         return $this->avgRated;
     }
 
@@ -365,7 +365,7 @@ abstract class Property {
      *
      * @return Image
      */
-    public function getImage(): Image {
+    public function getImage(): ?Image {
         return $this->image;
     }
 
@@ -385,7 +385,7 @@ abstract class Property {
      *
      * @return ArrayCollection
      */
-    public function getRooms(): ArrayCollection {
+    public function getRooms(): ?ArrayCollection {
         return $this->rooms;
     }
 
@@ -416,7 +416,7 @@ abstract class Property {
      *
      * @return ArrayCollection
      */
-    public function getEquipements(): ArrayCollection {
+    public function getEquipements(): ?ArrayCollection {
         return $this->equipements;
     }
 

@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Property;
-use App\Form\Property1Type;
+use App\Form\PropertyType;
 use App\Repository\PropertyRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +31,7 @@ class PropertyController extends AbstractController
     public function new(Request $request): Response
     {
         $property = new Property();
-        $form = $this->createForm(Property1Type::class, $property);
+        $form = $this->createForm(PropertyType::class, $property);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -63,7 +63,7 @@ class PropertyController extends AbstractController
      */
     public function edit(Request $request, Property $property): Response
     {
-        $form = $this->createForm(Property1Type::class, $property);
+        $form = $this->createForm(PropertyType::class, $property);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

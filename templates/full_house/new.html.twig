@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New FullHouse{% endblock %}
+
+{% block body %}
+    <h1>Create new FullHouse</h1>
+
+    {{ include('full_house/_form.html.twig') }}
+
+    <a href="{{ path('full_house_index') }}">back to list</a>
+{% endblock %}

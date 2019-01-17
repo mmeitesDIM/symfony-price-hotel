@@ -1,3 +1,7 @@
 index:
     path: /
     controller: App\Controller\HomePageController::index
+
+fullHouse:
+    path: /house/new
+    controller : App\Controller\FullHouseController::new
