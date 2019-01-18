@@ -51,3 +51,9 @@ php bin/console make:controller
 php bin/console make:crud
 ```
 
+## Progression
+
+ - [x] Register/Login/Logout
+ - [x] Create Property
+ - [x] Create REST API for Property
+ - [ ] Create Property for owner
